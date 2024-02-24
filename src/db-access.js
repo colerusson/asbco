@@ -9,8 +9,8 @@ module.exports.dbQuery = function(query, callbackFun){
 
     const connection = mysql.createConnection({
     host: 'aws.connect.psdb.cloud',
-    user: 'svlkedeqlhd8ilm2m86b',
-    password: 'pscale_pw_48LGn6D3GJGkuuIlygnDHoS3OfZsgqGnOMc8B0ImhLX',
+    user: '8dcngiudddi3agjoi0yt',
+    password: 'pscale_pw_3XPo5faCkM1lpv4LcNpGhDTJoW2ml1R2KBks7igih0c',
     database: 'anti-scroll',
     ssl: {
         rejectUnauthorized: true
