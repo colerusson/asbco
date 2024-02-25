@@ -32,6 +32,3 @@ module.exports.dbQuery = function(query, callbackFun){
 
 }
 
-
-//old user: 8dcngiudddi3agjoi0yt
-//old password: pscale_pw_3XPo5faCkM1lpv4LcNpGhDTJoW2ml1R2KBks7igih0c
