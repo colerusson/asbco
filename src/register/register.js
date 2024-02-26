@@ -2,6 +2,7 @@ const { registerService } = require("../services/user-service.js");
 
 /*
 example of registering user:
+
 await registerService(
   "Cosmo",
   "Cougar",
@@ -14,4 +15,5 @@ await registerService(
   () => {
     console.log("User already exists");
   }
+);
 */
