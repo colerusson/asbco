@@ -1,9 +1,11 @@
 const FormCard = ({ children }) => {
 	const formCardStyle = {
+		display: 'flex',
+		flexDirection: 'column',
 		backgroundColor: 'var(--tan)',
 		margin: '1rem',
-		padding: '1rem',
-		width: 'fit-content'
+		padding: '4rem',
+		width: "33%"
 	}
 
 	return (

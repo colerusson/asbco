@@ -11,14 +11,17 @@ const Register = ({ presenter }) => {
 	const [password, setPassword] = useState('')
 	const [bio, setBio] = useState('')
 	const [picture, setPicture] = useState()
-	return (
 
-		// box with entry fields 
-		// - could maybe just have "isRegister" bool to determine whether to show the bio, profile pic, which buttons
-		// button components - probably just have variants and pass in the text
-		// text input component? or a submit form component 
-		<div className='register'>
-			<MainTitle text="Site Title" />
+	const style = {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		width: '100vw'
+	}
+
+	return (
+		<div className='register' style={style}>
+			<MainTitle text="Anti-Scroll" />
 			<FormCard>
 				<TextInput
 					label="Username"
@@ -38,7 +41,7 @@ const Register = ({ presenter }) => {
 				/>
 				<ImgUpload
 					label="Profile Picture"
-					onUpload={(input) => setPicture(input.target.value)}
+					onUpload={(input) => setPicture(input)}
 				/>
 				<Button
 					text="Register"
@@ -51,7 +54,3 @@ const Register = ({ presenter }) => {
 }
 
 export default Register
-
-// options for landing/login screen:
-// bool is register that is used to choose between register and login
-// router with login and register (might be ideal to have the link change?)

@@ -1,8 +1,8 @@
 const MainTitle = ({ text }) => {
 	const titleStyle = {
 		fontFamily: "Lato, sans-serif",
-		fontWeight: "100",
-		fontSize: "x-large"
+		fontWeight: "300",
+		fontSize: "xxx-large"
 	}
 
 	return (

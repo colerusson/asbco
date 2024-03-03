@@ -1,14 +1,15 @@
 import { FaUpload } from 'react-icons/fa'
 
-const ImgUpload = ({ label, onUpload }) => {
+const ImgUpload = ({ label, onUpload, styleProp }) => {
 	const blockStyle = {
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'left'
+		justifyContent: 'left',
+		...styleProp
 	}
 
 	const labelStyle = {
-		fontSize: 'x-small',
+		fontSize: 'medium',
 		paddingTop: '0.25rem',
 		textAlign: 'left'
 	}
@@ -17,9 +18,10 @@ const ImgUpload = ({ label, onUpload }) => {
 		backgroundColor: 'var(--peach)',
 		color: 'var(--purple)', 
 		cursor: 'pointer',
-		border: '1px solid black',
+		border: '1px solid var(--purple)',
 		padding: '0.25rem',
-		width: '25%'
+		width: '5rem',
+		height: '5rem'
 	}
 
 	return (
@@ -27,6 +29,7 @@ const ImgUpload = ({ label, onUpload }) => {
 			<div style={labelStyle}>{label}</div>
 			<FaUpload
 				style={iconStyle}
+				onClick={() => onUpload()}
 			/>
 		</div>
 	)
