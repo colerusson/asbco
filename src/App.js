@@ -1,6 +1,7 @@
 import './App.css';
 import { NavLink, Route, Routes } from 'react-router-dom';
-import Register from './register/Register'
+import Register from './register/Register.jsx';
+import RegisterPresenter from './register/RegisterPresenter.js';
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
 			  <Route
 				  path='/register'
 				  element={
-					  <Register/>
+					  <Register
+						  presenter={new RegisterPresenter()}
+					  />
 				  }
 				  exact
 			  />

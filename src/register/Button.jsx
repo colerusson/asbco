@@ -1,5 +1,5 @@
 
-const Button = ({ text, variant }) => {
+const Button = ({ text, onClick, variant='primary' }) => {
 	const buttonStyle = {
 		backgroundColor: 'var(--purple)',
 		color: 'var(--tan)',
@@ -14,6 +14,7 @@ const Button = ({ text, variant }) => {
 		<div>
 			<button
 				style={buttonStyle}
+				onClick={onClick}
 			>
 				{text}
 			</button>

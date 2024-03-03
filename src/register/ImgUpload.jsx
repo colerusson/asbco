@@ -1,6 +1,6 @@
 import { FaUpload } from 'react-icons/fa'
 
-const ImgUpload = ({ label }) => {
+const ImgUpload = ({ label, onUpload }) => {
 	const blockStyle = {
 		display: 'flex',
 		flexDirection: 'column',

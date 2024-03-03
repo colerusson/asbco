@@ -1,5 +1,5 @@
 
-const TextInput = ({ label, placeholder, type }) => {
+const TextInput = ({ label, placeholder, type, onChange }) => {
 	const blockStyle = {
 		width: 'fit-content'
 	}
@@ -23,11 +23,13 @@ const TextInput = ({ label, placeholder, type }) => {
 					type="text"
 					style={inputStyle} 
 					placeholder={placeholder}
+					onChange={onChange}
 				/>}
 			{type === "textarea" 
 				&& <textarea
 					style={inputStyle}
 					placeholder={placeholder}
+					onChange={onChange}
 				/>}
 		</div>
 	)
