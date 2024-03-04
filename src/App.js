@@ -1,25 +1,36 @@
 import './App.css';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Register from './register/Register.jsx';
-import RegisterPresenter from './register/RegisterPresenter.js';
+import RegisterPresenter from './register/registerPresenter.js';
+import Login from './login/login.jsx';
+import LoginPresenter from './login/LoginPresenter.js';
 
 function App() {
-  return (
-    <div className="App">
-		  <Routes>
-			  <Route
-				  path='/register'
-				  element={
-					  <Register
-						  presenter={new RegisterPresenter()}
-					  />
-				  }
-				  exact
-			  />
-		  </Routes>
-      {/* <Register></Register> */}
-    </div>
-  );
+	return (
+		<div className="App">
+			<Routes>
+				<Route
+					path='/register'
+					element={
+						<Register
+							presenter={new RegisterPresenter()}
+						/>
+					}
+					exact
+				/>
+				<Route
+					path='/login'
+					element={
+						<Login
+							presenter={new LoginPresenter()}
+						/>
+					}
+					exact
+				/>
+			</Routes>
+			{/* <Register></Register> */}
+		</div>
+	);
 }
 
 export default App;
