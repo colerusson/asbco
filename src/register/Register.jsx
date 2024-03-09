@@ -10,7 +10,7 @@ const Register = ({ presenter }) => {
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 	const [bio, setBio] = useState('')
-	const [picture, setPicture] = useState()
+	const [picture, setPicture] = useState('')
 
 	const style = {
 		display: 'flex',
@@ -26,11 +26,13 @@ const Register = ({ presenter }) => {
 				<TextInput
 					label="Username"
 					placeholder=""
+					type="text"
 					onChange={(input) => setUsername(input.target.value)}
 				/>
 				<TextInput
 					label="Password"
 					placeholder=""
+					type="password"
 					onChange={(input) => setPassword(input.target.value)}
 				/>
 				<TextInput
@@ -41,7 +43,7 @@ const Register = ({ presenter }) => {
 				/>
 				<ImgUpload
 					label="Profile Picture"
-					onUpload={(input) => setPicture(input)}
+					onUpload={(input) => setPicture(input)} // TODO
 				/>
 				<Button
 					text="Register"

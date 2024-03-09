@@ -14,15 +14,15 @@ const TextInput = ({ label, placeholder, type, onChange }) => {
 		backgroundColor: 'var(--peach)',
 		border: 'none',
 		width: '100%',
-		height: type === "text" ? '1.5rem' : 'none'
+		height: type === "textarea" ? 'auto' : '1.5rem'
 	}
 
 	return (
 		<div style={blockStyle}>
 			<div style={labelStyle}>{label}</div>
-			{type === "text" 
+			{(type === "text" || type === "password")
 				&& <input
-					type="text"
+					type={type}
 					style={inputStyle} 
 					placeholder={placeholder}
 					onChange={onChange}
