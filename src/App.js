@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Register from './register/Register.jsx';
+import RegisterPresenter from './register/registerPresenter.js';
+import Login from './login/login.jsx';
+import LoginPresenter from './login/LoginPresenter.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Routes>
+				<Route
+					path='/register'
+					element={
+						<Register
+							presenter={new RegisterPresenter()}
+						/>
+					}
+					exact
+				/>
+				<Route
+					path='/login'
+					element={
+						<Login
+							presenter={new LoginPresenter()}
+						/>
+					}
+					exact
+				/>
+			</Routes>
+			{/* <Register></Register> */}
+		</div>
+	);
 }
 
 export default App;

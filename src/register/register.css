@@ -1,0 +1,14 @@
+:root {
+	--tan: #FFEFE6;
+	--peach: #FBD9E0;
+	--purple: #632B6C;
+	--pink: #C76B98;
+}
+
+body {
+	background-color: var(--peach);
+	font-family: 'Inter', sans-serif;
+	font-size: large;
+	display: flex;
+	justify-content: center;
+}
