@@ -1,10 +1,21 @@
+const { loginService } = require('../services/user-service.js');
+
 export default class LoginPresenter {
 	setView(view) {
 		this.view = view;
 	}
 
-	login(username, password) {
+	async login(username, password) {
 		console.log(username)
-		console.log(password)
+
+		await loginService(username, password,
+			() => {
+				console.log("User login successfully");
+				window.location.href = '/home'
+			},
+			() => {
+				console.log("User login failed");
+			}
+		);
 	}
 }
