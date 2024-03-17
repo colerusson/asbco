@@ -10,18 +10,20 @@ export default class LoginPresenter {
     this.view = view;
   }
 
-  login(username, password) {
+  async login(username, password) {
     console.log(username);
     console.log(password);
 
-    this.service.login(
+    await this.service.login(
       username,
       password,
       () => {
         console.log("Login success");
+        // TODO: change authstate
       },
       () => {
         console.log("Login fail");
+        // TODO: alert user
       }
     );
   }

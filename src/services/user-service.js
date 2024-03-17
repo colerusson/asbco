@@ -6,11 +6,7 @@ export default class UserService {
 
     const result = await makeQuery(query);
 
-    if (result.length === 0) {
-      return false;
-    }
-
-    if (result[0].pass_word === password) {
+    if (result.length > 0 && result[0].pass_word === password) {
       successCallback();
     } else {
       failCallback();
