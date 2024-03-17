@@ -1,23 +1,34 @@
-
-// const { registerService } = require('../services/user-service.js');
-
+import UserService from "../services/user-service";
 
 export default class RegisterPresenter {
-	setView(view) {
-		this.view = view;
-	}
+  constructor() {
+    this.service = new UserService();
+    this.view = null;
+  }
 
-	register(username, password, bio, picture) {
-		console.log(username)
-		console.log(password)
-		console.log(bio)
-		console.log(picture)
-		// registerService(username, password, bio, picture, () => {
-		// 	console.log("Register success");
-		// 	// TODO: change authstate
-		// }, () => {
-		// 	console.log("Register fail");
-		// 	// TODO: alert user
-		// })
-	}
+  setView(view) {
+    this.view = view;
+  }
+
+  async register(username, password, bio, picture) {
+    console.log(username);
+    console.log(password);
+    console.log(bio);
+    console.log(picture);
+
+    await this.service.register(
+      username,
+      password,
+      bio,
+      picture,
+      () => {
+        console.log("Register success");
+        // TODO: change authstate
+      },
+      () => {
+        console.log("Register fail");
+        // TODO: alert user
+      }
+    );
+  }
 }

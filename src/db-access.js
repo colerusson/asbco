@@ -1,6 +1,4 @@
-//this is just a function that accesses the database.
-//see loginService function in user-service.js for example on how to use it
-module.exports.dbQuery = function (query, callbackFun) {
+module.exports.dbQuery = async function (query) {
   require("dotenv").config();
   const mysql = require("mysql2");
 
@@ -22,7 +20,9 @@ module.exports.dbQuery = function (query, callbackFun) {
     console.log("Connected to PlanetScale!");
   });
 
-  connection.query(query, callbackFun);
+  const res = await connection.promise().query(query);
 
   connection.end();
+
+  return res[0];
 };
