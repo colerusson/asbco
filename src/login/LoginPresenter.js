@@ -1,10 +1,30 @@
-export default class LoginPresenter {
-	setView(view) {
-		this.view = view;
-	}
+import UserService from "../services/user-service";
 
-	login(username, password) {
-		console.log(username)
-		console.log(password)
-	}
+export default class LoginPresenter {
+  constructor() {
+    this.service = new UserService();
+    this.view = null;
+  }
+
+  setView(view) {
+    this.view = view;
+  }
+
+  async login(username, password) {
+    console.log(username);
+    console.log(password);
+
+    await this.service.login(
+      username,
+      password,
+      () => {
+        console.log("Login success");
+        // TODO: change authstate
+      },
+      () => {
+        console.log("Login fail");
+        // TODO: alert user
+      }
+    );
+  }
 }
