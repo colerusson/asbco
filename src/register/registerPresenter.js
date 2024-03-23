@@ -10,7 +10,7 @@ export default class RegisterPresenter {
     this.view = view;
   }
 
-	async register(username, password, bio, picture, firstName="First Name", lastName="Last Name") {
+	async register(firstName, lastName, username, password, picture) {
 		await this.service.register(
 			firstName,
 			lastName,
@@ -21,7 +21,7 @@ export default class RegisterPresenter {
 			console.log("User registered successfully");
 		},
 		() => {
-			console.log("User already exists");
+			console.log("Error registering user");
 		}
 		);
 	}
