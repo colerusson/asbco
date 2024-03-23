@@ -1,14 +1,17 @@
-
-const { registerService } = require('../services/user-service.js');
-
+import UserService from "../services/user-service";
 
 export default class RegisterPresenter {
-	setView(view) {
-		this.view = view;
-	}
+  constructor() {
+    this.service = new UserService();
+    this.view = null;
+  }
+
+  setView(view) {
+    this.view = view;
+  }
 
 	async register(username, password, bio, picture, firstName="First Name", lastName="Last Name") {
-		await registerService(
+		await this.service.register(
 			firstName,
 			lastName,
 			username,

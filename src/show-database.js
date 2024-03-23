@@ -1,34 +1,25 @@
-const { dbQuery } = require('./db-access.js');
+const { dbQuery } = require("./db-access.js");
 
 //run this file to print the whole database
 
+async function showDatabase() {
+  const userTable = "select * from user;";
+  const friendsTable = "select * from friends;";
+  const postsTable = "select * from post;";
 
-userTable = "select * from user;";
+  const userResult = await dbQuery(userTable);
+  console.log("Showing user table: ");
+  console.log(userResult);
 
-dbQuery(userTable, (err, result, fields) => {
-    if(err){
-        return console.log(err);
-    }
-    console.log("Showing user table: ")
-    console.log(result);
-})
+  const friendsResult = await dbQuery(friendsTable);
+  console.log("Showing friends table:");
+  console.log(friendsResult);
 
+  const postsResult = await dbQuery(postsTable);
+  console.log("Showing posts table:");
+  console.log(postsResult);
+}
 
-friendsTable = "select * from friends;";
-dbQuery(friendsTable, (err, result, fields) => {
-    if(err){
-        return console.log(err);
-    }
-    console.log("Showing friends table:");
-    console.log(result);
-})
-
-
-postsTable = "select * from post;";
-dbQuery(postsTable, (err, result, fields) => {
-    if(err){
-        return console.log(err);
-    }
-    console.log("Showing posts table:");
-    console.log(result);
-})
+showDatabase().catch((err) => {
+  console.error(err);
+});
