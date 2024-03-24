@@ -19,6 +19,7 @@ export default class RegisterPresenter {
 			picture,
 		() => {
 			console.log("User registered successfully");
+			window.location.href = '/home';
 		},
 		() => {
 			console.log("Error registering user");

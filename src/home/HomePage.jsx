@@ -1,3 +1,4 @@
+import EditButton from "./EditButton";
 import PostList from "./PostList"
 import ProfileHeader from "./ProfileHeader"
 import { useState, useEffect } from "react";
@@ -36,8 +37,10 @@ const HomePage = ({ presenter }) => {
 	return (
 		<div className="homePage" style={homePageStyle}>
 			<ProfileHeader user={user} />
-			<div>
+			<div style={{display: "flex"}}>
+				<EditButton />
 				<PostList posts={posts}/>
+				{/* TODO: add friends list */}
 			</div>
 		</div>
 	)
