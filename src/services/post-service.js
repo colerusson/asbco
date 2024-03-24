@@ -39,4 +39,22 @@ module.exports.writePostService = function (
     });
   };
 
+  module.exports.getAllUserPosts = function (
+    username,
+    successCallback,
+    failCallback
+  ) {
+    query = "select * from post where username = " + username + ";";
+    dbQuery(query, (err, result, fields) => {
+      if (err) {
+        console.log(err);
+        failCallback();
+      } else {
+        successCallback(result);
+      }
+      
+    });
+  };
+
+
   //get all posts for user
