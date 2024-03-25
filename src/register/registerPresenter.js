@@ -10,25 +10,20 @@ export default class RegisterPresenter {
     this.view = view;
   }
 
-  async register(username, password, bio, picture) {
-    console.log(username);
-    console.log(password);
-    console.log(bio);
-    console.log(picture);
-
-    await this.service.register(
-      username,
-      password,
-      bio,
-      picture,
-      () => {
-        console.log("Register success");
-        // TODO: change authstate
-      },
-      () => {
-        console.log("Register fail");
-        // TODO: alert user
-      }
-    );
-  }
+	async register(firstName, lastName, username, password, picture) {
+		await this.service.register(
+			firstName,
+			lastName,
+			username,
+			password,
+			picture,
+		() => {
+			console.log("User registered successfully");
+			window.location.href = '/home';
+		},
+		() => {
+			console.log("Error registering user");
+		}
+		);
+	}
 }
