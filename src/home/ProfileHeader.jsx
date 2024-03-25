@@ -1,5 +1,6 @@
 import ProfileBio from "./ProfileBio"
 import ProfilePicture from "./ProfilePicture"
+import Button from '../register/Button'
 
 const ProfileHeader = ({ user }) => {
 	const headerStyle = {
@@ -26,6 +27,11 @@ const ProfileHeader = ({ user }) => {
 				</p>
 				<ProfileBio bio={user.bio || dummyBio}/>
 			</div>
+			<Button
+				text="Logout"
+				variant="secondary"
+				onClick={() => { window.location.href = '/' }}
+			/>
 		</div>
 	)
 }

@@ -12,18 +12,16 @@ export default class LoginPresenter {
 
   async login(username, password) {
     console.log(username);
-    console.log(password);
 
     await this.service.login(
       username,
       password,
       () => {
-        console.log("Login success");
-        // TODO: change authstate
+        console.log("User login successfully");
+        window.location.href = "/home";
       },
       () => {
-        console.log("Login fail");
-        // TODO: alert user
+        console.log("User login failed");
       }
     );
   }

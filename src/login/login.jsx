@@ -29,6 +29,7 @@ const Login = ({ presenter }) => {
 				<TextInput
 					label="Password"
 					placeholder=""
+					type="password"
 					onChange={(input) => setPassword(input.target.value)}
 				/>
 				<Button
