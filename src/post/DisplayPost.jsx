@@ -2,7 +2,12 @@ import PostItem from "./postItem";
 import UserHeaderItem from "./userHeaderItem";
 
 const DisplayPost = ({ presenter }) => {
-  const post = presenter.getPost();
+  const getPost = async (presenter) => {
+    return await presenter.getPost();
+  };
+
+  const post = getPost(presenter);
+
   return (
     <div
       style={{
