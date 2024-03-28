@@ -6,6 +6,10 @@ import Login from "./login/login.jsx";
 import LoginPresenter from "./login/LoginPresenter.js";
 import HomePage from "./home/HomePage.jsx";
 import HomePagePresenter from "./home/HomePagePresenter.js";
+import CreatePost from "./post/CreatePost.jsx";
+import CreatePostPresenter from "./post/CreatePostPresenter.js";
+import DisplayPost from "./post/DisplayPost.jsx";
+import DisplayPostPresenter from "./post/DisplayPostPresenter.js";
 
 function App() {
   return (
@@ -26,8 +30,17 @@ function App() {
           element={<Login presenter={new LoginPresenter()} />}
           exact
         />
+        <Route
+          path="/create-post"
+          element={<CreatePost presenter={new CreatePostPresenter()} />}
+          exact
+        />
+        <Route
+          path="/display-post"
+          element={<DisplayPost presenter={new DisplayPostPresenter()} />}
+          exact
+        />
       </Routes>
-      {/* <Register></Register> */}
     </div>
   );
 }
